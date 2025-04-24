@@ -1,0 +1,16 @@
+ 1.   key generation:
+    In the bin location of java
+
+    keytool -genkey -keyalg RSA -keysize 2048 -validity 360 -alias MyKey -keystore jnp4e.keys
+
+    password for now: qwerty
+
+ 2.   Export generated server to an alias(MyKey.cert):
+
+    sudo keytool -export -alias MyKey -keystore jnp4e.keys -file MyKey.cert
+
+ 3.   Add the certificate to truststore file(myTrustStore.jts):
+
+    sudo keytool -import -file MyKey.cert -alias MyKey -keystore myTrustStore.jts
+
+    password for now: qwerty

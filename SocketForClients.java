@@ -5,7 +5,7 @@ import java.io.IOException;
 public class SocketForClients {
     public static void main(String[] args) {
         try{
-            Socket socket = new Socket("192.168.1.184", 3008);
+            Socket socket = new Socket("time.nist.gov", 13);
             InputStream is = socket.getInputStream();
             int a;
             while((a = is.read()) != -1){

@@ -12,11 +12,11 @@ import javax.net.ssl.SSLSocketFactory;
 
 public class Client {
     public static void main(String[] args) {
-        System.setProperty("javax.net.ssl.trustStore", "myTrustStore.jts");
-        System.setProperty("javax.net.ssl.trustStorePassword", "123456");
+        System.setProperty("javax.net.ssl.trustStore", "my_ssl_keys/myTrustStore.jts");
+        System.setProperty("javax.net.ssl.trustStorePassword", "qwerty");
         try {
             SSLSocketFactory factory = (SSLSocketFactory)SSLSocketFactory.getDefault();
-            SSLSocket client = (SSLSocket)factory.createSocket("192.168.1.159", 2356);
+            SSLSocket client = (SSLSocket)factory.createSocket("localhost", 2356);
             InputStream is = client.getInputStream();
             OutputStream os = client.getOutputStream();
             String fromServer = "", toServer = "";

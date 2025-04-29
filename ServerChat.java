@@ -11,7 +11,7 @@ import java.net.Socket;
 public class ServerChat {
     public static void main(String[] args) {
         try{
-            ServerSocket server = new ServerSocket(140);
+            ServerSocket server = new ServerSocket(3005);
             Socket socket = server.accept();
             InputStream is = socket.getInputStream();
             OutputStream os = socket.getOutputStream();

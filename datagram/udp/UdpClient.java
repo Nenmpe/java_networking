@@ -17,6 +17,11 @@ public class UdpClient {
                 DatagramPacket packet = new DatagramPacket(buf, buf.length, addr, 3001);
                 DatagramSocket socket = new DatagramSocket();
                 socket.send(packet);
+
+                System.out.println("Client Local Address: " + socket.getLocalAddress());
+                System.out.println("Client Local Port: " + socket.getLocalPort());
+                System.out.println("Server Address: " + packet.getAddress());
+                System.out.println("Server Port: " + packet.getPort());
                 DatagramPacket response = new DatagramPacket(new byte[50], 50);
                 socket.receive(response);
                 String responseString = new String(response.getData(), 0, response.getLength());

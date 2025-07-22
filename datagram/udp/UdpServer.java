@@ -16,6 +16,12 @@ public class UdpServer {
                 server.receive(dp);                
                 String str = new String(dp.getData(), 0, dp.getLength());
                 System.out.println("Received: " + str);
+
+                System.out.println("Client Address: " + dp.getAddress());
+                System.out.println("Client Port: " + dp.getPort());
+                System.out.println("Server Local Address: " + server.getLocalAddress());
+                System.out.println("Server Local Port: " + server.getLocalPort());
+
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 byte[] toClient = br.readLine().getBytes();
                 InetAddress addr = dp.getAddress();
